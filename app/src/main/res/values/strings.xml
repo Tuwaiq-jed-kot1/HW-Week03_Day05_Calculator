@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HW-Week03_Day05_Calculator</string>
+    <string name="result">Result</string>
+    <string name="sub">-</string>
+    <string name="add">+</string>
+    <string name="enter_second_number">Enter Second Num</string>
+    <string name="enter_first_number">Enter First Num</string>
+    <string name="multiply">*</string>
+    <string name="divide">/</string>
+    <string name="calculator">Calculator</string>
+    <string name="zero">0</string>
+</resources>
