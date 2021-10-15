@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="sub">-</string>
+    <string name="sum">+</string>
+    <string name="multi">X</string>
+    <string name="div">/</string>
+</resources>
