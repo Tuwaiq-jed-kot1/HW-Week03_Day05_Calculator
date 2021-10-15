@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnDiv : ImageButton
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -50,16 +49,16 @@ class MainActivity : AppCompatActivity() {
 
 
         when (operation) {
-            "add" -> return (editTextN1.toString().toDouble() + editTextN2.toString()
+            "add" -> return (editTextN1.text.toString().toDouble() + editTextN2.text.toString()
                 .toDouble()).toString()
 
-            "sub" -> return (editTextN1.toString().toDouble() - editTextN2.toString()
+            "sub" -> return (editTextN1.text.toString().toDouble() - editTextN2.text.toString()
                 .toDouble()).toString()
 
-            "multiply" -> return (editTextN1.toString().toDouble() * editTextN2.toString()
+            "multiply" -> return (editTextN1.text.toString().toDouble() * editTextN2.text.toString()
                 .toDouble()).toString()
 
-            "divide" -> return (editTextN1.toString().toDouble() / editTextN2.toString()
+            "divide" -> return (editTextN1.text.toString().toDouble() / editTextN2.text.toString()
                 .toDouble()).toString()
 
             else -> return "no result"
