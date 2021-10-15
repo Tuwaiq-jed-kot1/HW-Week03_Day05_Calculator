@@ -1,0 +1,177 @@
+//the MaineActivity-->>
+class MainActivity : AppCompatActivity() {
+
+
+    private lateinit var firstNumber: EditText
+    private lateinit var secondNumber: EditText
+    private lateinit var addButton: Button
+    private lateinit var subButton: Button
+    private lateinit var multButton: Button
+    private lateinit var divButton: Button
+    private lateinit var resultTxt: TextView
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        //////////////////////////////////////////////////////
+        firstNumber = findViewById(R.id.Enter1Number)
+        secondNumber = findViewById(R.id.Enter2Number)
+
+        addButton = findViewById(R.id.btnAdd)
+        subButton = findViewById(R.id.btnSup)
+        multButton = findViewById(R.id.btnMult)
+        divButton = findViewById(R.id.btnDiv)
+
+        resultTxt = findViewById(R.id.txtResult)
+
+
+        ///////////////////////////////////////////////////////
+        addButton.setOnClickListener{
+            calAdd()
+        }
+        subButton.setOnClickListener {
+            calSub()
+        }
+        multButton.setOnClickListener {
+            calmult()
+        }
+        divButton.setOnClickListener {
+            calDiv()
+        }
+
+
+        /////////////////////////////////////////////////////////
+    }
+    fun calAdd(){
+        if (firstNumber.text.toString().isNotBlank() && secondNumber.text.toString().isNotBlank()){
+           resultTxt.text= ( firstNumber.text.toString().toDouble() + secondNumber.text.toString()
+                .toDouble()).toString()
+        } else{
+            Toast.makeText(this, "plz enter a number", Toast.LENGTH_SHORT).show()
+        }
+    }    fun calSub(){
+        if (firstNumber.text.toString().isNotBlank() && secondNumber.text.toString().isNotBlank()){
+            resultTxt.text= ( firstNumber.text.toString().toDouble() - secondNumber.text.toString()
+                .toDouble()).toString()
+        } else{
+            Toast.makeText(this, "plz enter a number", Toast.LENGTH_SHORT).show()
+        }
+    }    fun calmult(){
+        if (firstNumber.text.toString().isNotBlank() && secondNumber.text.toString().isNotBlank()){
+            resultTxt.text=  ( firstNumber.text.toString().toDouble() * secondNumber.text.toString()
+                .toDouble()).toString()
+        } else{
+            Toast.makeText(this, "plz enter a number", Toast.LENGTH_SHORT).show()
+        }
+    }    fun calDiv(){
+        if (firstNumber.text.toString().isNotBlank() && secondNumber.text.toString().isNotBlank()){
+            resultTxt.text= ( firstNumber.text.toString().toDouble() / secondNumber.text.toString()
+                .toDouble()).toString()
+        } else{
+            Toast.makeText(this, "plz enter a number", Toast.LENGTH_SHORT).show()
+        }
+    }
+}
+
+
+
+
+// -------------->>>>>>>>>>>><<<<<<<<<<<<<-----------------------------------------
+// the activity_main.xml -->>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/teal_200"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:text="Chose the number"
+        android:textSize="30sp"
+        android:textColor="@color/black"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp">
+
+    <EditText
+        android:id="@+id/Enter1Number"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:hint="enter the first number"
+        android:textColor="@color/black"
+        android:layout_margin="8dp"/>
+
+    <EditText
+        android:id="@+id/Enter2Number"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:layout_margin="8dp"
+        android:textColor="@color/black"
+        android:hint="enter the second number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:text="@string/butAdd"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnSup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:textSize="30dp"
+        android:text="@string/butSub"
+        android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnMult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:textSize="30dp"
+        android:text="@string/butMult"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:textSize="30dp"
+        android:text="@string/butDiv"
+        android:textStyle="bold" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtResult"
+        android:text="Result"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+</LinearLayout>
