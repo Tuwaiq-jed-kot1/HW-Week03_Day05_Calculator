@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/num1"
+        android:layout_width="70dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="90dp"
+        android:background="#D9E3E8"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="70dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="90dp"
+        android:background="#D9E3E8"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/addition_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="91dp"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="#696969"
+        android:fontFamily="serif"
+        android:text="+"
+        android:textSize="55sp" />
+
+    <Button
+        android:id="@+id/multipy_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="91dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="#696969"
+        android:fontFamily="serif"
+        android:text="*"
+        android:textSize="55sp" />
+
+    <Button
+        android:id="@+id/divide_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="91dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="330dp"
+        android:backgroundTint="#696969"
+        android:fontFamily="serif"
+        android:text="/"
+        android:textSize="55sp" />
+
+    <Button
+        android:id="@+id/subtract_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="91dp"
+        android:layout_marginStart="235dp"
+        android:fontFamily="serif"
+        android:layout_marginTop="330dp"
+        android:backgroundTint="#696969"
+        android:text="-"
+        android:textSize="55sp" />
+
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:background="#696969"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</RelativeLayout>
+
