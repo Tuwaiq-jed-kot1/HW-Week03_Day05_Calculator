@@ -1,0 +1,212 @@
+MainActivity.kt
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var num1: EditText
+    private lateinit var num2: EditText
+    private lateinit var _result: TextView
+    private lateinit var addBtn: Button
+    private lateinit var subBtn: Button
+    private lateinit var divBtn: Button
+    private lateinit var multiBtn: Button
+    private lateinit var clearBtn: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        num1 = findViewById(R.id.EditNum1)
+        num2 = findViewById(R.id.EditNum2)
+        _result = findViewById(R.id.txtResult)
+        addBtn = findViewById(R.id.btnAdd)
+        subBtn = findViewById(R.id.btnSub)
+        divBtn = findViewById(R.id.btnDiv)
+        multiBtn = findViewById(R.id.btnMulti)
+        clearBtn = findViewById(R.id.btnClear)
+
+        clearBtn.setOnClickListener {
+            num1.setText(" ")
+            num2.setText(" ")
+            _result.setText("0.00")
+
+        }
+
+        addBtn.setOnClickListener {
+            val firstNum = num1.text.toString().toDouble()
+            val secondNum = num2.text.toString().toDouble()
+            add(firstNum, secondNum)
+            error(firstNum, secondNum)
+        }
+        subBtn.setOnClickListener {
+            val firstNum = num1.text.toString().toDouble()
+            val secondNum = num2.text.toString().toDouble()
+            sub(firstNum, secondNum)
+            error(firstNum, secondNum)
+        }
+        divBtn.setOnClickListener {
+            val firstNum = num1.text.toString().toDouble()
+            val secondNum = num2.text.toString().toDouble()
+            div(firstNum, secondNum)
+            error(firstNum, secondNum)
+        }
+        multiBtn.setOnClickListener {
+            val firstNum = num1.text.toString().toDouble()
+            val secondNum = num2.text.toString().toDouble()
+            multi(firstNum, secondNum)
+            error(firstNum, secondNum)
+        }
+
+
+    }
+
+    private fun error( firstNum: Double , secondNum: Double){ // I'm trying to solve null errors
+        if (secondNum == 0.00){
+            Toast.makeText(this,
+                "Do not divide by zero!",
+                Toast.LENGTH_LONG)
+                .show()
+        }
+    }
+
+    private fun add(firstNum: Double, secondNum: Double) {
+        val result = firstNum + secondNum
+        _result.text = result.toString()
+    }
+
+    private fun sub(firstNum: Double, secondNum: Double) {
+        val result = firstNum - secondNum
+        _result.text = result.toString()
+    }
+
+    private fun div(firstNum: Double, secondNum: Double) {
+        val result = firstNum / secondNum
+        _result.text = result.toString()
+    }
+
+    private fun multi(firstNum: Double, secondNum: Double) {
+            val result = firstNum * secondNum
+            _result.text = result.toString()
+        }
+
+    }
+
+    __________________________________________________________
+
+Activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginEnd="11dp"
+        android:text="+"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMulti"
+        app:layout_constraintEnd_toStartOf="@+id/btnSub"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnSub" />
+
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="4dp"
+        android:text="-"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDiv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAdd"
+        app:layout_constraintTop_toBottomOf="@+id/txtResult" />
+
+    <Button
+        android:id="@+id/btnMulti"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginEnd="11dp"
+        android:text="x"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDiv"
+        app:layout_constraintEnd_toStartOf="@+id/btnDiv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnDiv" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="11dp"
+        android:text="/"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnClear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnMulti"
+        app:layout_constraintTop_toBottomOf="@+id/btnSub" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="175dp"
+        android:text="Clear"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDiv" />
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="0.00"
+        android:textSize="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditNum2" />
+
+    <EditText
+        android:id="@+id/EditNum1"
+        android:layout_width="94dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/EditNum2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/EditNum2"
+        android:layout_width="91dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/txtResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditNum1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
