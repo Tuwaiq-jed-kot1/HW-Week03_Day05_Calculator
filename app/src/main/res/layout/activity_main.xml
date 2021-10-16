@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simple Calculator"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:inputType="numberDecimal"
+        android:id="@+id/ediTexFirstNumber"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:hint="0"/>
+
+    <EditText
+        android:inputType="numberDecimal"
+        android:id="@+id/ediTexSecondNumber"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:hint="0"/>
+
+    <ImageButton
+        android:id="@+id/ImaButAddition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/addition"/>
+    <ImageButton
+        android:id="@+id/ImaButSubtraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/subtraction"/>
+    <ImageButton
+        android:id="@+id/ImaButMultiplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/multiplication"/>
+    <ImageButton
+        android:id="@+id/ImaButDivision"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/division"/>
+
+    <TextView
+        android:id="@+id/texVieResult"
+        android:text="Result"
+        android:layout_width="165dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="30dp" />
+</LinearLayout>
