@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Calculator</string>
+    <string name="msg">Hello I\'m Your Calculator!</string>
+    <string name="add">+</string>
+    <string name="sub">-</string>
+    <string name="mult">×</string>
+    <string name="div">÷</string>
+    <string name="clear_result">Clear result!</string>
+</resources>

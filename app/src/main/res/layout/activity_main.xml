@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nm"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="301dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:background="#696969"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="@string/msg"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/num1"
+        android:layout_width="70dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="90dp"
+        android:background="#D9E3E8"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="70dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="90dp"
+        android:background="#D9E3E8"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="91dp"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="#696969"
+        android:fontFamily="serif"
+        android:text="@string/add"
+        android:textSize="55sp" />
+
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:layout_height="91dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="#696969"
+        android:fontFamily="serif"
+        android:text="@string/sub"
+        android:textSize="55sp" />
+
+    <Button
+        android:id="@+id/mult"
+        android:layout_width="wrap_content"
+        android:layout_height="91dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="330dp"
+        android:backgroundTint="#696969"
+        android:fontFamily="serif"
+        android:text="@string/mult"
+        android:textSize="55sp" />
+
+    <Button
+        android:id="@+id/div"
+        android:layout_width="wrap_content"
+        android:layout_height="91dp"
+        android:layout_marginStart="235dp"
+        android:fontFamily="serif"
+        android:layout_marginTop="330dp"
+        android:backgroundTint="#696969"
+        android:text="@string/div"
+        android:textSize="55sp" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="520dp"
+        android:fontFamily="serif"
+        android:backgroundTint="#696969"
+        android:text="@string/clear_result"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>
