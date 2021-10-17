@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="first_number">First Number</string>
+    <string name="addButtonText">+</string>
+    <string name="subButtonText">-</string>
+    <string name="multiButtonText">X</string>
+    <string name="devideButtonText">/</string>
+    <string name="result">Result</string>
+</resources>
